@@ -1,0 +1,216 @@
+*{box-sizing:border-box}html,body{min-height:100%;}body{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f3f7f5;color:#162722}button,input,select,textarea{font:inherit}.wrap{width:min(1160px,92%);margin:auto}main{flex:1;width:100%}header{background:linear-gradient(135deg,#063a33,#075c4f);color:#fff;padding:24px 0}.top{display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-size:30px;font-weight:900;letter-spacing:2px}.sub{font-size:13px;color:#d9ebe7;margin-top:4px}.pitch{font-size:11px;font-weight:900;letter-spacing:1px;text-align:right}nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #dce7e3;z-index:10}.nav{display:flex;gap:6px;padding:9px 0;overflow:auto}.nav button{border:0;background:transparent;padding:11px 16px;border-radius:10px;color:#075c4f;font-weight:800;white-space:nowrap;cursor:pointer}.nav button.active,.nav button:hover{background:#e7f4f0}.section{display:none;padding:38px 0 70px}.section.active{display:block}.hero{background:#fff;border:1px solid #dce7e3;border-radius:24px;padding:42px;display:grid;grid-template-columns:1fr 280px;gap:28px;box-shadow:0 12px 35px #063a3310;margin-bottom:28px}.hero h1{font-size:clamp(38px,5vw,60px);line-height:.98;letter-spacing:-2px;margin:12px 0}.page-title h2,h2{font-size:32px;margin:7px 0}.page-title p{max-width:760px}small{color:#0d7a68;font-size:11px;font-weight:900;letter-spacing:1.5px}p{color:#687873;line-height:1.6}.search{display:flex;gap:9px;margin-top:23px}.search input{flex:1}input,select,textarea{width:100%;padding:13px;border:1px solid #d5e3df;border-radius:10px;background:#fff;color:#162722}button{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer}.search button,.panel>button{background:#075c4f;color:#fff}.secondary,.ghost{background:#e8f4f0;color:#075c4f}.ghost{padding:7px 11px}.outline{background:#fff;border:1px solid #b9d4cd;color:#075c4f;margin-top:14px}.trustbox{background:#edf7f3;border-radius:16px;padding:24px;display:grid;align-content:center;gap:13px;color:#075c4f}.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.panel,#profile{background:#fff;border:1px solid #dce7e3;border-radius:16px;padding:21px;box-shadow:0 10px 30px #063a3308}.row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.badge{border-radius:99px;padding:6px 9px;font-size:11px;font-weight:900}.low{background:#e5f6ee;color:#08704f}.moderate{background:#fff3dc;color:#9a6208}.high{background:#ffe7e9;color:#a92d3b}.score{font-size:30px;font-weight:900;color:#075c4f;margin:14px 0}.small{font-size:12px;color:#687873}.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.panel{display:grid;gap:14px;align-content:start}.panel label{font-size:13px;font-weight:800;display:grid;gap:7px}.panel output{font-weight:900;color:#075c4f}.stats{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:20px 0}.stat{background:#fff;border:1px solid #dce7e3;border-radius:13px;padding:15px;min-height:108px;display:flex;flex-direction:column;justify-content:flex-start}.stat b{display:block;font-size:25px;color:#075c4f;margin-top:auto;line-height:1.1}.case,.inv{padding:13px 0;border-bottom:1px solid #dce7e3}.case:last-child,.inv:last-child{border:0}.meta{font-size:12px;color:#687873;margin-top:6px}.heap{background:#063a33;color:#fff;padding:7px 10px;border-radius:8px;font-size:11px}.heapcall{background:#eaf6f2;color:#075c4f;padding:14px;border-radius:10px;font-weight:800}.profilegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.metric{padding:14px;border:1px solid #dce7e3;border-radius:10px}.metric b{display:block;font-size:19px;margin-top:5px}.factor{display:flex;justify-content:space-between;border-bottom:1px solid #dce7e3;padding:9px}.positive{color:#16835d}.negative{color:#c93c49}.notice{padding:13px;border-radius:10px;background:#edf7f3}.error{background:#fff0f1;color:#a92d3b}.success{background:#e9f7f0;color:#126f50}.prov{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.provitem{border:1px solid #dce7e3;border-radius:10px;padding:13px}.formula{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.formula b{background:#eef7f4;padding:9px;border-radius:8px;color:#075c4f}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check{display:flex!important;grid-template-columns:none!important;align-items:center;gap:8px!important;background:#f5f9f7;padding:11px;border-radius:9px}.check input{width:auto}.inline{display:flex;gap:9px;align-items:center}.inline>*:first-child{flex:1}.qr-image{width:min(280px,100%);border:1px solid #dce7e3;border-radius:12px;padding:8px}.qr-reader{margin-top:15px;background:#0a2924;border-radius:14px;padding:12px;color:#fff}.qr-reader video{width:100%;max-height:300px;object-fit:cover;border-radius:9px;margin-top:9px}.reader-row{display:flex;justify-content:space-between}.hidden{display:none!important}.linkbtn{background:none;color:#075c4f;padding:0 4px;text-decoration:underline}.ocr-panel{margin-top:20px}.info-panel{align-content:center}.section-head #notifyButton{white-space:nowrap}hr{width:100%;border:0;border-top:1px solid #dce7e3}footer{background:#063a33;color:#cfe2de;padding:22px 0;font-size:12px}@media(max-width:1000px){.hero,.cols{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}}@media(max-width:650px){.top{align-items:flex-start;flex-direction:column}.pitch{text-align:left}.hero{padding:27px}.grid,.stats,.profilegrid,.prov{grid-template-columns:1fr}.search,.inline{display:grid}.check-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.nav{margin:0;width:100%}}
+/* =========================================================
+   VERIFIED VISIT GPS
+   ========================================================= */
+
+.gps-box {
+    margin: 16px 0;
+    padding: 18px;
+    border: 1px solid #cfe3db;
+    border-radius: 14px;
+    background: #f5faf7;
+}
+
+.gps-box h3 {
+    margin: 4px 0;
+    color: #075c4f;
+}
+
+.gps-box .row {
+    align-items: center;
+}
+
+.gps-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.gps-details > div {
+    padding: 13px;
+    background: #fff;
+    border: 1px solid #dce7e3;
+    border-radius: 10px;
+}
+
+.gps-details span {
+    display: block;
+    color: #687873;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 6px;
+}
+
+.gps-details b {
+    display: block;
+    color: #075c4f;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+#locationStatus {
+    margin: 10px 0 0;
+}
+
+#locationStatus.success {
+    background: transparent;
+    padding: 0;
+    color: #16835d;
+}
+
+#locationStatus.error {
+    background: transparent;
+    padding: 0;
+    color: #a92d3b;
+}
+
+#getLocationButton {
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+
+    .gps-details {
+        grid-template-columns: 1fr;
+    }
+
+    .gps-box .row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #getLocationButton {
+        width: 100%;
+    }
+}
+.restaurant-image{width:100%;height:190px;object-fit:cover;border-radius:12px;margin-bottom:14px;display:block}
+
+.consumer-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.profile-image{width:100%;max-height:360px;object-fit:cover;border-radius:14px;margin:16px 0}
+.profile-details{display:grid;gap:7px;margin:12px 0 18px;padding:14px;border:1px solid #e5e7eb;border-radius:12px}
+
+
+/* Restaurant photo search */
+.photo-search{display:flex;align-items:center;justify-content:center;gap:7px;padding:0 14px;border:1px solid #b9d4cd;border-radius:10px;background:#e8f4f0;color:#075c4f;font-weight:800;cursor:pointer;white-space:nowrap}
+.photo-search input{display:none}
+.photo-result{margin-top:10px}
+.photo-result:empty{display:none}
+
+.private-nav.hidden{display:none!important}.private-section{min-height:500px}.inventory-summary{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:20px 0}.inventory-stat,.admin-mini{background:#fff;border:1px solid #dce7e3;border-radius:14px;padding:15px;box-shadow:0 8px 20px #063a3308}.inventory-stat span,.admin-mini span{font-size:22px}.inventory-stat small,.admin-mini small{display:block;color:#687873;font-weight:800;margin-top:5px}.inventory-stat b,.admin-mini b{display:block;font-size:24px;color:#075c4f;margin-top:5px}.inventory-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.food-icon{font-size:30px;background:#edf7f3;padding:8px 12px;border-radius:12px}.inventory-filters{display:flex;gap:7px;flex-wrap:wrap}.inventory-filters button{padding:8px 11px;font-size:12px}.inventory-filters .active-filter{background:#075c4f;color:#fff}.inventory-card{display:grid;grid-template-columns:50px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid #dce7e3}.inventory-icon{width:48px;height:48px;border-radius:12px;background:#edf7f3;display:grid;place-items:center;font-size:26px}.inventory-meta{display:flex;gap:10px;flex-wrap:wrap;color:#687873;font-size:12px;margin-top:8px}.incident-chip{display:inline-block;margin-top:8px;padding:5px 8px;border-radius:99px;background:#fff0df;color:#9a6208;font-size:11px;font-weight:900}.admin-overview{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:18px 0}.admin-mini{display:grid;align-content:start}.admin-risk-panel{margin:18px 0}.risk-row{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #dce7e3}.risk-row div{display:grid;gap:3px}.risk-row div span{font-size:12px;color:#687873}.risk-row strong{color:#075c4f}.primary{background:#075c4f;color:#fff}@media(max-width:1000px){.inventory-summary,.admin-overview{grid-template-columns:repeat(3,1fr)}.inventory-layout{grid-template-columns:1fr}}@media(max-width:650px){.inventory-summary,.admin-overview,.form-grid-2,.form-grid-3{grid-template-columns:1fr}.risk-row{grid-template-columns:1fr auto}}
+
+/* Admin and inventory internal navigation */
+.subnav-tabs{display:flex;gap:8px;flex-wrap:wrap}.subnav-tabs button{border:1px solid #b9d4cd}.subnav-tabs button.active{background:#075c4f;color:#fff}.admin-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.admin-tabs{margin-bottom:18px}.admin-mode-panel,.inventory-mode-panel{margin-top:14px}.risk-filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}.risk-filter-tabs button.active{background:#075c4f;color:#fff}.admin-login-panel{max-width:700px}.admin-login-panel .form-grid{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}@media(max-width:700px){.admin-login-panel .form-grid{grid-template-columns:1fr}.admin-toolbar{align-items:flex-start;gap:12px;flex-direction:column}}
+
+/* Advanced admin operations */
+.admin-overview-panel{margin-top:18px}.admin-overview-details{margin-top:14px}.overview-health{display:grid;grid-template-columns:minmax(260px,2fr) repeat(3,1fr);gap:12px;align-items:center;background:#f7fbf9;border:1px solid #dce7e3;border-radius:14px;padding:16px}.overview-health>div:first-child{padding-right:12px}.overview-health b{display:block;font-size:20px;color:#075c4f;margin:4px 0 9px}.health-track{height:9px;background:#e4eeeb;border-radius:99px;overflow:hidden}.health-track span{display:block;height:100%;background:#3a8f73;border-radius:99px}.overview-mini{background:#fff;border:1px solid #dce7e3;border-radius:12px;padding:12px;text-align:center}.overview-mini span{font-size:20px}.overview-mini b{font-size:22px;margin:2px 0}.overview-mini small{color:#687873;font-weight:800}.priority-dashboard{display:grid;gap:14px}.priority-summary,.expiry-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.priority-kpi,.expiry-kpi{background:#fff;border:1px solid #dce7e3;border-radius:14px;padding:15px;box-shadow:0 8px 20px #063a3308}.priority-kpi span,.expiry-kpi span{font-size:22px}.priority-kpi small,.expiry-kpi small{display:block;color:#687873;font-weight:800;margin-top:5px}.priority-kpi b,.expiry-kpi b{display:block;color:#075c4f;font-size:25px;margin-top:3px}.priority-case{padding:16px;border:1px solid #e1ebe7;border-radius:13px;margin:10px 0;background:#fbfdfc}.priority-case:first-child{border-color:#e7c7c0;background:#fffaf9}.priority-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:11px;font-size:12px;color:#687873}.priority-meta span{background:#f0f6f3;border-radius:99px;padding:5px 9px}.priority-meta b{color:#075c4f}.expiry-dashboard{display:grid;gap:14px}.expiry-filter-tabs{margin:0}.expiry-filter-tabs button.active{background:#075c4f;color:#fff}.alert-card{border:1px solid #dce7e3;border-radius:13px;padding:15px;margin:10px 0;background:#fff}.alert-card.expiring-soon{border-left:5px solid #d68b18}.alert-card.expired{border-left:5px solid #b63b35;background:#fffafa}.alert-card.low-stock{border-left:5px solid #d0a31a}.alert-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;color:#687873;font-size:11px;font-weight:800}.badge.expiring-soon{background:#fff1dc;color:#9a6208}.badge.expired{background:#ffe8e6;color:#a12e29}.badge.low-stock{background:#fff5cf;color:#8a6800}
+@media(max-width:900px){.overview-health{grid-template-columns:1fr 1fr}.priority-summary,.expiry-summary{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.overview-health,.priority-summary,.expiry-summary{grid-template-columns:1fr}}
+
+/* Restaurant analytics graphs */
+.restaurant-graphs-panel{margin-top:18px}.graph-summary{display:grid;grid-template-columns:repeat(3,1fr) 2fr;gap:12px;margin:16px 0}.graph-kpi{background:#fff;border:1px solid #dce7e3;border-radius:14px;padding:14px;box-shadow:0 8px 20px #063a3308}.graph-kpi span{font-size:21px}.graph-kpi small{display:block;color:#687873;font-weight:800;margin-top:4px}.graph-kpi b{display:block;color:#075c4f;font-size:20px;margin-top:3px}.graph-note{display:flex;align-items:center;background:#f3faf7;border:1px solid #cfe3dc;border-radius:14px;padding:14px;color:#49635d;font-size:12px;line-height:1.5}.restaurant-graphs{display:grid;gap:16px}.graph-card{background:#fff;border:1px solid #dce7e3;border-radius:16px;padding:16px;overflow:hidden}.graph-card-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:8px}.graph-card-head b{display:block;color:#075c4f;font-size:17px}.graph-card-head span{display:block;color:#687873;font-size:12px;margin-top:3px}.graph-card-head strong{background:#edf7f3;color:#075c4f;border-radius:99px;padding:5px 9px;font-size:11px}.line-chart-wrap{width:100%;overflow-x:auto}.line-chart-wrap svg{width:100%;min-width:850px;height:auto;display:block}.chart-grid{stroke:#dce7e3;stroke-width:1}.chart-axis{fill:#71827d;font-size:11px}.chart-label{fill:#526762;font-size:10px}.chart-line{fill:none;stroke:#075c4f;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.chart-point{fill:#fff;stroke:#075c4f;stroke-width:2}.chart-point:hover{r:7;cursor:pointer}@media(max-width:900px){.graph-summary{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.graph-summary{grid-template-columns:1fr}.graph-card{padding:12px}}
+
+/* ADMIN DETAILS ANALYTICS */
+.details-section-panel{margin-bottom:20px}
+.details-picker{display:grid;grid-template-columns:minmax(260px,420px);gap:12px}
+.details-picker label{font-size:13px;font-weight:800;display:grid;gap:7px}
+.details-chart-host{width:100%;margin-top:4px}
+.details-chart-host .graph-card{border:1px solid #dce7e3;background:#fbfdfc}
+.details-chart-host .line-chart-wrap{padding-top:4px}
+.details-chart-host .line-chart-wrap svg{min-width:900px}
+.details-formula{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.details-formula>*{background:#eef7f4;padding:9px 11px;border-radius:8px;color:#075c4f}
+.details-meta{display:flex;flex-wrap:wrap;gap:9px;margin:4px 0 2px}
+.details-meta span{background:#eef7f4;color:#075c4f;border-radius:8px;padding:8px 10px;font-size:12px}
+.chart-axis-caption{font-size:11px;color:#687873;text-align:center;margin-top:-4px;padding-bottom:4px}
+@media(max-width:700px){.details-picker{grid-template-columns:1fr}.details-chart-host .line-chart-wrap svg{min-width:760px}}
+
+
+/* Details choice screen */
+.details-choice-panel{display:grid;gap:14px;max-width:900px}
+.details-choice-card{width:100%;display:grid;grid-template-columns:52px minmax(0,1fr) 28px;align-items:center;gap:16px;text-align:left;background:#fff;border:1px solid #d7e5e1;border-radius:14px;padding:18px 20px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.details-choice-card:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,74,61,.08);border-color:#a9cec4}
+.details-choice-card b{display:block;font-size:16px;color:#075c4f;margin-bottom:5px}
+.details-choice-card small{display:block;color:#687873;font-size:13px;line-height:1.5}
+.details-choice-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:11px;background:#eef7f4;font-size:22px}
+.details-choice-arrow{font-size:24px;color:#087a68;text-align:center}
+.details-view-panel{display:block}
+.details-back-btn{margin-bottom:14px}
+@media(max-width:700px){.details-choice-card{grid-template-columns:44px minmax(0,1fr) 22px;padding:15px;gap:12px}.details-choice-card b{font-size:14px}}
+
+/* Consumer profile close control */
+#profile{position:relative;padding-top:48px;margin-top:18px}
+.profile-close{position:absolute;right:14px;top:12px;width:36px;height:36px;padding:0;border:1px solid #c9ddd7;border-radius:50%;background:#edf7f3;color:#075c4f;font-size:25px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2}
+.profile-close:hover{background:#d9eee7}
+.report-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px}
+.report-evidence{border:1px solid #dce7e3;border-radius:12px;padding:12px;min-width:0}
+.report-evidence img{display:block;max-width:100%;width:100%;max-height:340px;object-fit:contain;background:#f5f9f7;border-radius:8px;margin-top:8px}
+.report-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.report-status{display:inline-block;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:900;background:#edf7f3;color:#075c4f}
+@media(max-width:650px){.report-evidence-grid{grid-template-columns:1fr}}
+
+
+/* Photo search selection and OCR suggestions */
+.photo-selection-preview{margin-top:12px}.photo-selected-card{display:flex;align-items:center;gap:14px;padding:12px;border:1px solid #cfe2db;border-radius:12px;background:#fff}.photo-selected-card img{width:96px;height:84px;object-fit:cover;border-radius:9px;background:#edf7f3}.photo-selected-card>div{display:grid;gap:6px;min-width:0}.photo-selected-card b{color:#08704f}.photo-selected-card small{letter-spacing:0;font-weight:600}.photo-selected-card button{justify-self:start;padding:7px 10px}.ocr-suggestions{display:grid;gap:7px;margin-top:10px}.ocr-suggestion{display:grid;grid-template-columns:28px minmax(0,1fr);gap:4px 8px;text-align:left;align-items:center;background:#fff;border:1px solid #d5e3df;color:#075c4f}.ocr-suggestion>span{grid-row:span 2}.ocr-suggestion small{grid-column:2;color:#687873;letter-spacing:0;font-weight:600}.ocr-suggestion:hover{border-color:#087a68;background:#f5fbf8}
+/* Report evaluation is selected deliberately instead of expanding every case */
+.report-controls{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;margin:14px 0}.report-controls label{display:grid;gap:6px;font-size:13px;font-weight:800}.report-summary-card{padding:18px;border:1px solid #dce7e3;border-radius:13px;margin:12px 0}.report-summary-text{margin:8px 0 12px}.report-evaluation-details{border-top:1px solid #dce7e3;margin-top:14px;padding-top:14px}.report-evaluation-details.hidden{display:none!important}.report-evaluation-details .report-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.manager-login-panel{max-width:720px}.manager-login-panel form{max-width:620px}.manager-login-panel .form-grid{display:grid;gap:14px}.manager-login-panel label{display:grid;gap:7px;font-size:13px;font-weight:800}.manager-login-panel button{justify-self:start}.manager-login-panel .small{margin-top:8px}.manager-workspace .panel{margin-top:14px}
+@media(max-width:650px){.photo-selected-card{align-items:flex-start}.photo-selected-card img{width:76px;height:76px}.report-controls,.report-evaluation-details .report-detail-grid{grid-template-columns:1fr}}
+
+/* OCR candidates show their mapped restaurant photo to prevent name/photo confusion. */
+.ocr-suggestion{grid-template-columns:58px minmax(0,1fr);gap:4px 10px;min-height:68px}
+.ocr-suggestion-image{grid-row:span 2;width:58px;height:54px;object-fit:cover;border-radius:8px;background:#edf7f3}
+.ocr-suggestion-number{grid-row:span 2;align-self:center;justify-self:center;font-weight:800}
+.ocr-suggestion b,.ocr-suggestion small{min-width:0;overflow-wrap:anywhere}
+
+
+/* Transparent factor table for the weighted risk calculation */
+.risk-factor-table-wrap{overflow-x:auto;margin-top:14px;border:1px solid #dce7e3;border-radius:10px;background:#fff}
+.risk-factor-table-wrap table{width:100%;border-collapse:collapse;min-width:720px;font-size:12px}
+.risk-factor-table-wrap th,.risk-factor-table-wrap td{padding:10px 12px;border-bottom:1px solid #e5eeeb;text-align:left;vertical-align:top}
+.risk-factor-table-wrap th{background:#eef7f4;color:#075c4f;font-weight:800}
+.risk-factor-table-wrap tr:last-child td{border-bottom:0}
+
+
+/* =========================================================
+   Restaurant Map — additional feature, preserving existing UI
+   ========================================================= */
+.restaurant-map-section{margin:34px 0 30px;padding:26px;background:#fff;border:1px solid #dce7e3;border-radius:22px;box-shadow:0 12px 32px #063a3309}
+.map-heading-row{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:14px}
+.map-heading-row h2{margin:7px 0 6px;font-size:30px;letter-spacing:-.7px}
+.map-heading-row p{margin:0;max-width:720px;line-height:1.55}
+.map-free-badge{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:9px 12px;background:#eaf7f0;border:1px solid #cce9da;color:#08764f;border-radius:999px;font-size:12px;font-weight:800}
+.map-demo-notice{padding:12px 14px;border:1px solid #f0dfb5;background:#fff9e9;border-radius:12px;color:#71591d;font-size:12px;line-height:1.55;margin:18px 0}
+.restaurant-map-tools{display:grid;grid-template-columns:auto minmax(180px,1fr) auto;align-items:center;gap:12px;margin:18px 0 14px}
+.map-search-wrap{font-size:12px;font-weight:800;color:#33544b}
+#restaurantMapSearch{width:100%;min-width:0;border:1px solid #d8e5df;background:#fbfdfc;border-radius:10px;padding:11px 13px;outline:none}
+#restaurantMapSearch:focus{border-color:#16866c;box-shadow:0 0 0 3px #16866c1c}
+.restaurant-map-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.85fr);gap:16px;align-items:stretch}
+#restaurantMap{height:510px;min-height:380px;z-index:1;border:1px solid #dce7e3;border-radius:16px;overflow:hidden;background:#eaf1ee}
+.map-loading,.map-fallback{padding:24px;color:#62756e;font-size:13px}.map-fallback{padding:28px;background:#f6faf8;height:100%}.map-fallback strong{color:#174c3f}.map-fallback p{line-height:1.5}
+.map-restaurant-panel{border:1px solid #e0eae5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-height:510px;background:#fcfefd}
+.map-panel-top{padding:17px 17px 12px;border-bottom:1px solid #e4ece8;background:#f7fbf9}.map-panel-top h3{font-size:19px;margin:5px 0 0;color:#173f35}
+.restaurant-map-list{overflow-y:auto;max-height:285px;padding:7px;flex:1}
+.map-restaurant-item{display:flex;width:100%;gap:10px;align-items:center;text-align:left;border:1px solid transparent;background:transparent;border-radius:11px;padding:10px 9px;cursor:pointer;color:#203d34;transition:background .15s,border-color .15s}
+.map-restaurant-item:hover{background:#f0f8f4;border-color:#d6e9df}.map-restaurant-item.selected{background:#e8f5ee;border-color:#9ed2b7}
+.map-item-marker{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:10px;background:#0b7259;color:white;font-size:11px;font-weight:900}
+.map-item-copy{min-width:0;display:flex;flex-direction:column;gap:3px;flex:1}.map-item-copy strong{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.map-item-copy small{font-size:10px;letter-spacing:0;color:#71847c;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.map-item-rating{font-size:11px;font-weight:900;color:#a86b08}.map-item-rating em{font-style:normal;color:#89978f;font-weight:700;font-size:9px;margin-left:3px}.map-item-chevron{font-size:24px;color:#8da69b}
+.map-selected-details{padding:16px;border-top:1px solid #e1ebe6;background:#fff}.selected-map-title{display:flex;gap:10px;align-items:center}.selected-map-pin{display:grid;place-items:center;background:#e8f5ee;border-radius:12px;width:40px;height:40px;font-size:19px}.selected-map-title h3{font-size:15px;margin:0;color:#163f34}.selected-map-title p{font-size:11px;margin:4px 0 0;color:#73847d}.map-rating-line{display:flex;align-items:center;gap:8px;margin:13px 0 10px}.map-stars{font-size:17px;font-weight:900;color:#b7780d}.map-stars small{font-size:11px;letter-spacing:0;color:#7b8983}.demo-tag{font-size:9px;letter-spacing:.5px;font-weight:900;background:#fff3d7;color:#8b6111;border-radius:5px;padding:5px 6px}.map-score-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #edf1ef;padding-top:10px;color:#65766f;font-size:11px}.map-score-row strong{font-size:20px;color:#08735a}.map-score-row strong small{font-size:10px;letter-spacing:0;color:#74847d}.map-disclaimer{font-size:10px;line-height:1.45;color:#7b8983;margin:9px 0}.approx-location-note{font-size:10px;color:#8c6717;background:#fff8e8;border-radius:6px;padding:6px 8px;margin:7px 0}.map-google-link{display:flex;justify-content:center;text-decoration:none;background:#0a6d55;color:white;padding:10px 12px;border-radius:9px;font-size:12px;font-weight:800;margin-top:10px}.map-google-link:hover{background:#075340}.map-profile-button{width:100%;margin-top:8px}.map-empty{padding:14px;color:#7c8b84;font-size:12px}.map-footer-note{font-size:10px;color:#7a8982;margin:13px 2px 0;line-height:1.5}
+.foodsafe-map-marker-wrap{background:transparent;border:0}.foodsafe-map-marker{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#08775c;border:2px solid white;box-shadow:0 3px 10px #123b2e44;color:#fff;font-size:11px;font-weight:900}
+.map-popup{display:flex;flex-direction:column;gap:5px;min-width:140px}.map-popup strong{font-size:13px;color:#153e33}.map-popup span{font-size:11px;color:#708079}.map-popup b{font-size:12px;color:#a66a06}.map-popup b small{font-size:9px;letter-spacing:0;color:#84928b}.map-popup a{font-size:11px;font-weight:800;color:#08745a;text-decoration:none}.map-popup>small{font-size:9px;letter-spacing:0;color:#97701b}
+@media(max-width:850px){.restaurant-map-layout{grid-template-columns:1fr}.map-restaurant-panel{min-height:0}.restaurant-map-list{max-height:230px}#restaurantMap{height:420px}.map-heading-row{flex-direction:column}.map-free-badge{align-self:flex-start}}
+@media(max-width:520px){.restaurant-map-section{padding:15px;border-radius:16px}.restaurant-map-tools{grid-template-columns:1fr auto}.map-search-wrap{grid-column:1/-1}.restaurant-map-tools #restaurantMapSearch{grid-column:1/-1;grid-row:2}.restaurant-map-tools #resetRestaurantMap{grid-column:2;grid-row:1}#restaurantMap{height:350px;min-height:320px}.map-heading-row h2{font-size:25px}}
+
+/* Self-contained FoodSafe schematic map: works without Leaflet, API keys, or map tiles. */
+#restaurantMap.foodsafe-schematic-map{position:relative;background:#eaf2e9;isolation:isolate}
+.schematic-map-art{position:absolute;inset:0;overflow:hidden;background-color:#eaf2e9;background-image:linear-gradient(25deg,transparent 47%,#d8e5d8 48%,#d8e5d8 49%,transparent 50%),linear-gradient(115deg,transparent 46%,#d8e5d8 47%,#d8e5d8 48%,transparent 49%),linear-gradient(0deg,#e1ecdf 1px,transparent 1px),linear-gradient(90deg,#e1ecdf 1px,transparent 1px);background-size:100% 100%,100% 100%,34px 34px,34px 34px}
+.map-waterway{position:absolute;width:24%;height:130%;left:22%;top:-12%;transform:rotate(22deg);border-radius:50%;background:#c4e2e7;opacity:.9;filter:blur(1px)}
+.map-park{position:absolute;background:#cce5c8;border:1px solid #b5d8b2;border-radius:38% 62% 45% 55%;opacity:.95}.park-one{width:19%;height:17%;left:67%;top:14%;transform:rotate(-18deg)}.park-two{width:23%;height:14%;left:8%;top:63%;transform:rotate(14deg)}
+.map-road{position:absolute;height:10px;background:#fffdf5;border:1px solid #e8dfca;border-radius:99px;box-shadow:0 0 0 3px #ffffff66}.road-a{width:130%;left:-12%;top:28%;transform:rotate(12deg)}.road-b{width:130%;left:-12%;top:54%;transform:rotate(-19deg)}.road-c{width:120%;left:-8%;top:78%;transform:rotate(8deg)}.road-d{width:110%;left:-5%;top:42%;transform:rotate(65deg)}.road-e{width:110%;left:8%;top:48%;transform:rotate(-54deg)}.road-f{width:110%;left:30%;top:63%;transform:rotate(72deg)}.road-g{width:110%;left:22%;top:17%;transform:rotate(-8deg)}
+.map-place{position:absolute;font-size:10px;font-weight:900;letter-spacing:1.3px;color:#72877a;text-shadow:0 1px #fff;pointer-events:none}.place-pune{left:43%;top:44%;font-size:17px;color:#567566;letter-spacing:4px}.place-camp{left:72%;top:66%}.place-kothrud{left:8%;top:31%}.place-shivaji{left:38%;top:17%}.place-hadapsar{left:70%;top:82%}
+.schematic-pin{position:absolute;z-index:4;transform:translate(-50%,-50%);border:2px solid #fff;border-radius:50%;width:32px;height:32px;padding:0;background:#08775c;box-shadow:0 3px 10px #193e2f55;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;display:grid;place-items:center}.schematic-pin>span:first-child{display:grid;place-items:center;line-height:1;font-size:16px;filter:grayscale(1) brightness(0) invert(1)}.schematic-pin:hover,.schematic-pin:focus-visible,.schematic-pin.active{z-index:8;background:#d98c12;transform:translate(-50%,-50%) scale(1.15);box-shadow:0 5px 15px #193e2f66;outline:none}.schematic-pin-tooltip{position:absolute;left:50%;bottom:calc(100% + 9px);transform:translate(-50%,4px);background:#073f35;color:#fff;padding:7px 10px;border:1px solid #ffffffaa;border-radius:7px;box-shadow:0 5px 16px #173b2e33;font-size:11px;line-height:1.25;font-weight:800;white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .12s,transform .12s;z-index:12}.schematic-pin-tooltip:after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#073f35}.schematic-pin:hover .schematic-pin-tooltip,.schematic-pin:focus-visible .schematic-pin-tooltip,.schematic-pin.active .schematic-pin-tooltip{opacity:1;visibility:visible;transform:translate(-50%,0)}.schematic-map-caption{position:absolute;z-index:5;bottom:12px;left:12px;right:12px;background:#ffffffed;border:1px solid #dce8df;border-radius:10px;padding:9px 11px;font-size:11px;font-weight:800;color:#275346;box-shadow:0 3px 12px #20473512}.schematic-map-caption span:last-child{font-size:10px;font-weight:500;color:#71847a}.map-legend-dot{display:inline-block;width:8px;height:8px;background:#08775c;border-radius:50%;margin-right:5px}
+
+/* Restaurant Map is a standalone navigation page between Consumer and Report Issue. */
+.restaurant-map-page{padding-top:28px}
+.restaurant-map-page .restaurant-map-section{margin:0}

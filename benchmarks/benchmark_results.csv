@@ -1,0 +1,36 @@
+Structure,Records,Metric,Value,Unit
+Hash Table,100,Average Lookup,0.25855999992927536,microseconds
+Hash Table,1000,Average Lookup,0.2899000002798857,microseconds
+Hash Table,10000,Average Lookup,0.5706399999326095,microseconds
+Hash Table,50000,Average Lookup,1.1718199999450007,microseconds
+Hash Table,100000,Average Lookup,0.6384599997545592,microseconds
+Min Heap,100,Linear Scan,0.008309000004373956,milliseconds
+Min Heap,100,Re-sort,0.014064999995753169,milliseconds
+Min Heap,100,Min Heap,4.3000000005122274e-05,milliseconds
+Min Heap,1000,Linear Scan,0.08786000000327476,milliseconds
+Min Heap,1000,Re-sort,0.29260300001624273,milliseconds
+Min Heap,1000,Min Heap,7.500000720028765e-05,milliseconds
+Min Heap,5000,Linear Scan,0.4544490000080259,milliseconds
+Min Heap,5000,Re-sort,0.8126529999935883,milliseconds
+Min Heap,5000,Min Heap,4.499999704421498e-05,milliseconds
+Min Heap,10000,Linear Scan,0.4728140000042913,milliseconds
+Min Heap,10000,Re-sort,2.9524640000090585,milliseconds
+Min Heap,10000,Min Heap,7.100001312210225e-05,milliseconds
+Min Heap,20000,Linear Scan,1.8866610000077344,milliseconds
+Min Heap,20000,Re-sort,4.862155999999231,milliseconds
+Min Heap,20000,Min Heap,3.99999953515362e-05,milliseconds
+Priority Queue,100,FIFO High Priority Position,49.8235294117647,position
+Priority Queue,100,PQ High Priority Position,17.5,position
+Priority Queue,100,Position Improvement,64.87603305785123,percent
+Priority Queue,1000,FIFO High Priority Position,502.5807453416149,position
+Priority Queue,1000,PQ High Priority Position,161.5,position
+Priority Queue,1000,Position Improvement,67.86586006389382,percent
+Priority Queue,5000,FIFO High Priority Position,2469.6645649432535,position
+Priority Queue,5000,PQ High Priority Position,793.5,position
+Priority Queue,5000,Position Improvement,67.87013057304677,percent
+Priority Queue,10000,FIFO High Priority Position,5002.348743406764,position
+Priority Queue,10000,PQ High Priority Position,1612.0,position
+Priority Queue,10000,Position Improvement,67.77513758662546,percent
+Priority Queue,20000,FIFO High Priority Position,9886.044038155804,position
+Priority Queue,20000,PQ High Priority Position,3145.5,position
+Priority Queue,20000,Position Improvement,68.18241970337431,percent

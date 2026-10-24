@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>FoodSafe | Food Safety Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="wrap top">
+
+        <div>
+            <div class="brand">
+                FOODSAFE
+            </div>
+
+            <div class="sub">
+                Evidence-Based Food Safety Intelligence & Prevention Platform
+            </div>
+        </div>
+
+        <div class="pitch">
+            DON'T TRUST THE STARS. CHECK THE EVIDENCE.
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
+<nav>
+
+    <div class="wrap nav">
+
+        <button
+            data-s="searchSection"
+            class="active"
+        >
+            Consumer
+        </button>
+
+        <button data-s="restaurantMapSection">🗺️ Restaurant Map</button>
+
+        <button
+            data-s="complaintSection"
+        >
+            Report Issue
+        </button>
+
+        <button data-s="visitSection">Verified Visit</button>
+        <button id="adminLoginNav" data-s="adminSection">🔐 Admin Login</button>
+        <button id="restaurantManagerNav" data-s="restaurantManagementSection">🏪 Restaurant Management Login</button>
+        <button id="inventoryNav" class="private-nav hidden" data-s="inventorySection">📦 Inventory</button>
+        <button id="adminNav" class="private-nav hidden" data-s="adminSection">🛡️ Admin Dashboard</button>
+        <button id="detailsNav" class="private-nav hidden" data-s="detailsSection">📈 Details</button>
+        
+
+    </div>
+
+</nav>
+
+
+<main class="wrap">
+
+
+<!-- =========================================================
+     CONSUMER SEARCH
+     ========================================================= -->
+
+<section
+    id="searchSection"
+    class="section active"
+>
+
+    <div class="hero">
+
+        <div>
+
+            <small>
+                FOOD SAFETY INTELLIGENCE
+            </small>
+
+            <h1>
+                Check food safety<br>
+                before you eat.
+            </h1>
+
+            <p>
+                Search a restaurant to see what is known,
+                verified and why its safety indicator
+                looks the way it does.
+            </p>
+
+
+            <div class="search">
+
+                <input
+                    id="searchInput"
+                    placeholder="Restaurant name or area"
+                    autocomplete="off"
+                >
+
+                <button id="searchButton">
+                    Search
+                </button>
+
+                <label class="photo-search" title="Upload a restaurant sign or menu photo">
+                    <span>📷 Photo</span>
+                    <input
+                        id="ocrFile"
+                        type="file"
+                        accept="image/*"
+                    >
+                </label>
+
+                <button id="ocrButton" class="secondary">
+                    Find by Photo
+                </button>
+
+                <button
+                    id="scanQrButton"
+                    class="secondary"
+                >
+                    Scan QR
+                </button>
+
+            </div>
+
+            <div id="photoSelectionPreview" class="photo-selection-preview hidden" aria-live="polite"></div>
+            <div id="ocrResult" class="photo-result"></div>
+
+
+            <div
+                id="qrReader"
+                class="qr-reader hidden"
+            >
+
+                <div class="reader-row">
+
+                    <b>
+                        QR scanner
+                    </b>
+
+                    <button
+                        id="closeQr"
+                        class="ghost"
+                    >
+                        Close
+                    </button>
+
+                </div>
+
+                <video
+                    id="qrVideo"
+                    autoplay
+                    playsinline
+                ></video>
+
+                <p
+                    id="qrStatus"
+                    class="small"
+                >
+                    Point your camera at a FoodSafe restaurant QR.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="trustbox">
+
+            <b>
+                TRUST LAYER
+            </b>
+
+            <span>
+                ✓ OFFICIAL
+            </span>
+
+            <span>
+                ✓ VERIFIED
+            </span>
+
+            <span>
+                ℹ EXTERNAL
+            </span>
+
+            <span>
+                ⚠ USER REPORTED
+            </span>
+
+            <span>
+                ○ UNVERIFIED
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-head">
+
+        <div>
+
+            <h2>
+                Restaurants
+            </h2>
+
+            <p id="searchStatus"></p>
+
+        </div>
+
+        <div class="consumer-actions">
+            <button id="showRestaurantsButton" class="secondary">Show Restaurants</button>
+            <button
+                id="notifyButton"
+                class="secondary"
+            >
+                Enable Alerts
+            </button>
+        </div>
+
+    </div>
+
+
+
+
+    <div
+        id="results"
+        class="grid hidden"
+    ></div>
+
+
+    <div id="profile"></div>
+
+
+</section>
+
+
+<!-- =========================================================
+     RESTAURANT MAP PAGE
+     ========================================================= -->
+<section id="restaurantMapSection" class="section restaurant-map-page" aria-labelledby="restaurantMapTitle">
+    <div class="restaurant-map-section">
+        <div class="map-heading-row">
+            <div>
+                <small>DISCOVER PLACES · EXPLORE LOCAL DINING</small>
+                <h2 id="restaurantMapTitle">Restaurant Map</h2>
+                <p>Explore restaurants across Pune, find locations, and view restaurant details alongside FoodSafe safety indicators. Select a marker or directory entry to get started.</p>
+            </div>
+        </div>
+        <div class="map-demo-notice"><strong>About the data:</strong> Restaurant ratings are illustrative sample values for this demonstration. Location pins may represent approximate area locations.</div>
+        <div class="restaurant-map-tools">
+            <label class="map-search-wrap" for="restaurantMapSearch">Find on map</label>
+            <input id="restaurantMapSearch" type="search" placeholder="Search restaurant or area…" autocomplete="off">
+            <button id="resetRestaurantMap" class="secondary" type="button">Show all 25</button>
+        </div>
+        <div class="restaurant-map-layout">
+            <div id="restaurantMap" role="application" aria-label="Interactive map of FoodSafe restaurants in Pune">
+                <div class="map-loading">Loading restaurant map…</div>
+            </div>
+            <aside class="map-restaurant-panel">
+                <div class="map-panel-top"><div><small>RESTAURANT DIRECTORY</small><h3 id="mapResultCount">25 locations</h3></div></div>
+                <div id="restaurantMapList" class="restaurant-map-list"><p class="map-loading">Loading restaurants…</p></div>
+                <div id="mapSelectedDetails" class="map-selected-details"><strong>Select a restaurant</strong><p>Choose a marker or a restaurant from the list to see details.</p></div>
+            </aside>
+        </div>
+        <div class="map-footer-note">Map tiles © OpenStreetMap contributors · Ratings are illustrative demo values · Use “Open in Google Maps” for Google Maps navigation.</div>
+    </div>
+</section>
+
+<!-- =========================================================
+     REPORT ISSUE
+     ========================================================= -->
+
+<section
+    id="complaintSection"
+    class="section"
+>
+
+    <div class="page-title">
+
+        <small>
+            EVIDENCE-BASED REPORTING
+        </small>
+
+        <h2>
+            Report a Food Safety Issue
+        </h2>
+
+        <p>
+            Public reports are not equivalent to official
+            violations. Submitted cases enter the explainable
+            priority queue.
+        </p>
+
+    </div>
+
+
+    <div class="cols">
+
+
+        <form
+            id="complaintForm"
+            class="panel"
+        >
+
+            <label>
+
+                Restaurant
+
+                <select
+                    name="restaurant_id"
+                    id="complaintRestaurant"
+                    required
+                ></select>
+
+            </label>
+
+
+            <label>
+
+                Issue Category
+
+                <select name="category">
+
+                    <option>
+                        Hygiene
+                    </option>
+
+                    <option>
+                        Food Quality
+                    </option>
+
+                    <option>
+                        Expired Food
+                    </option>
+
+                    <option>
+                        Storage
+                    </option>
+
+                    <option>
+                        Pest / Infestation
+                    </option>
+
+                    <option>
+                        Possible Contamination
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Severity
+
+                <output id="severityValue">
+                    5
+                </output>
+
+                <input
+                    name="severity"
+                    id="severity"
+                    type="range"
+                    min="1"
+                    max="10"
+                    value="5"
+                >
+
+            </label>
+
+
+            <label>
+
+                Description
+
+                <textarea
+                    name="description"
+                    rows="5"
+                    required
+                    placeholder="Describe what you observed..."
+                ></textarea>
+
+            </label>
+
+
+            <label>
+
+                Location
+
+                <input
+                    name="location"
+                    placeholder="Area / locality"
+                >
+
+            </label>
+
+
+            <label>
+
+                Date / time
+
+                <input
+                    name="timestamp"
+                    id="complaintTimestamp"
+                    type="datetime-local"
+                >
+
+            </label>
+
+
+            <label>
+                Bill / Reference
+                <input name="bill_reference" placeholder="Bill number / transaction reference (optional)">
+            </label>
+
+            <label>
+                Bill image / receipt
+                <small>Optional JPG/PNG/WEBP bill or receipt image, max 5 MB</small>
+                <input name="bill_evidence" type="file" accept="image/png,image/jpeg,image/webp">
+            </label>
+
+
+            <label>
+
+                Evidence photo
+
+                <small>
+                    JPG/PNG/WEBP, max 5 MB
+                </small>
+
+                <input
+                    name="evidence"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+
+            </label>
+
+
+            <button>
+                Submit Complaint
+            </button>
+
+
+            <div id="complaintResult"></div>
+
+        </form>
+
+
+        <div class="panel info-panel">
+
+            <small>
+                HOW PRIORITY WORKS
+            </small>
+
+            <h3>
+                Evidence changes priority.
+            </h3>
+
+            <div class="formula">
+
+                <b>Severity</b>
+                +
+                <b>Evidence</b>
+                +
+                <b>Independent reports</b>
+                +
+                <b>Previous violations</b>
+                +
+                <b>Recency</b>
+
+            </div>
+
+            <p>
+                The score is deterministic and transparent.
+                High-priority cases appear first in the
+                admin Priority Queue.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VERIFIED VISIT
+     ========================================================= -->
+
+<section
+    id="visitSection"
+    class="section"
+>
+
+    <div class="page-title">
+
+        <small>
+            TRUST LAYER
+        </small>
+
+        <h2>
+            Verified Visit
+        </h2>
+
+        <p>
+            Show what evidence exists for a visit instead
+            of treating every review as equally reliable.
+        </p>
+
+    </div>
+
+
+    <div class="cols">
+
+
+        <!-- =================================================
+             VERIFIED VISIT FORM
+             ================================================= -->
+
+        <form
+            id="visitForm"
+            class="panel"
+        >
+
+
+            <!-- RESTAURANT -->
+
+            <label>
+
+                Restaurant
+
+                <select
+                    name="restaurant_id"
+                    id="visitRestaurant"
+                    required
+                ></select>
+
+            </label>
+
+
+            <!-- VERIFICATION METHODS -->
+
+            <div class="check-grid">
+
+                <label class="check">
+
+                    <input
+                        type="checkbox"
+                        name="qr"
+                        value="1"
+                    >
+
+                    Restaurant QR
+
+                </label>
+
+
+                <label class="check">
+
+                    <input
+                        type="checkbox"
+                        name="location_verified"
+                        id="locationVerified"
+                        value="1"
+                    >
+
+                    Location
+
+                </label>
+
+
+                <label class="check">
+
+                    <input
+                        type="checkbox"
+                        name="timestamp_verified"
+                        value="1"
+                    >
+
+                    Timestamp
+
+                </label>
+
+
+                <label class="check">
+
+                    <input
+                        type="checkbox"
+                        name="bill"
+                        value="1"
+                    >
+
+                    Bill upload/reference
+
+                </label>
+
+
+                <label class="check">
+
+                    <input
+                        type="checkbox"
+                        name="otp"
+                        value="1"
+                    >
+
+                    OTP/account verification
+
+                </label>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GPS VERIFICATION
+                 ================================================= -->
+
+            <div class="gps-box">
+
+
+                <div class="row">
+
+                    <div>
+
+                        <small>
+                            GPS VERIFICATION
+                        </small>
+
+                        <h3>
+                            Verify your physical location
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="getLocationButton"
+                        class="secondary"
+                    >
+                        Get My Location
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="locationStatus"
+                    class="small"
+                >
+                    Click "Get My Location" to capture
+                    your browser GPS position.
+                </p>
+
+
+                <div class="gps-details">
+
+
+                    <div>
+
+                        <span>
+                            Latitude
+                        </span>
+
+                        <b id="latitudeDisplay">
+                            Not captured
+                        </b>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Longitude
+                        </span>
+
+                        <b id="longitudeDisplay">
+                            Not captured
+                        </b>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Distance
+                        </span>
+
+                        <b id="distanceDisplay">
+                            Calculated by server
+                        </b>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HIDDEN GPS VALUES -->
+
+            <input
+                type="hidden"
+                name="latitude"
+                id="visitLatitude"
+            >
+
+
+            <input
+                type="hidden"
+                name="longitude"
+                id="visitLongitude"
+            >
+
+
+
+            <!-- VISIT TIMESTAMP -->
+
+            <label>
+
+                Visit date/time
+
+                <input
+                    name="visit_timestamp"
+                    id="visitTimestamp"
+                    type="datetime-local"
+                    required
+                >
+
+            </label>
+
+
+
+            <!-- LOCATION -->
+
+            <label>
+
+                Location
+
+                <input
+                    name="location_text"
+                    id="visitLocation"
+                    placeholder="GPS location will appear here"
+                >
+
+            </label>
+
+
+
+            <!-- QR TOKEN -->
+
+            <label>
+
+                QR Token
+
+                <small>
+                    Optional FoodSafe QR token
+                </small>
+
+                <input
+                    name="qr_token"
+                    id="qrToken"
+                    placeholder="VIS-xxxxxxx"
+                >
+
+            </label>
+
+
+
+            <!-- BILL -->
+
+            <label>
+                Bill / Reference
+                <input name="bill_reference" placeholder="Bill number / transaction reference (optional)">
+            </label>
+
+
+            <!-- BILL UPLOAD -->
+
+            <label>
+
+                Bill upload
+
+                <small>
+                    JPG/PNG/WEBP, max 5 MB
+                </small>
+
+                <input
+                    name="bill_evidence"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+
+            </label>
+
+
+
+            <!-- OTP -->
+
+            <label>
+
+                OTP code
+
+                <small>
+                    Enter the 6-digit code sent to your mobile. Expires in 5 minutes.
+                </small>
+
+                <input
+                    name="otp_code"
+                    inputmode="numeric"
+                    maxlength="6"
+                    placeholder="Enter 6-digit SMS OTP"
+                >
+                <input type="hidden" name="otp_phone" id="visitOtpPhone">
+
+            </label>
+
+
+
+            <!-- SUBMIT -->
+
+            <button type="submit">
+                Verify Visit
+            </button>
+
+
+            <div id="visitResult"></div>
+
+
+        </form>
+
+
+
+        <!-- =================================================
+             QR + OTP PANEL
+             ================================================= -->
+
+        <div class="panel">
+
+            <small>
+                QR + OTP
+            </small>
+
+
+            <h3>
+                Restaurant QR
+            </h3>
+
+
+            <p>
+                Generate a profile QR for a selected restaurant.
+                The browser scanner can open the profile when
+                camera barcode detection is supported.
+            </p>
+
+
+            <div class="inline">
+
+                <select
+                    id="qrRestaurant"
+                ></select>
+
+                <button
+                    id="generateQr"
+                >
+                    Generate QR
+                </button>
+
+            </div>
+
+
+            <img
+                id="qrImage"
+                class="qr-image hidden"
+                alt="FoodSafe restaurant QR"
+            >
+
+
+            <hr>
+
+
+            <h3>
+                Real SMS OTP
+            </h3>
+
+
+            <p class="small">
+
+                Send a one-time verification code to your mobile number.
+                The code expires in 5 minutes and can only be used once.
+                SMS provider credentials must be configured by the project administrator.
+
+            </p>
+
+
+            <div class="inline">
+
+                <input
+                    id="otpPhone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="Mobile number (e.g. +919876543210)"
+                >
+
+                <button id="sendOtp">
+                    Send SMS OTP
+                </button>
+
+            </div>
+
+
+            <div id="otpResult" aria-live="polite"></div>
+
+            <hr>
+
+            <h3>Demo OTP (Free)</h3>
+            <p class="small">For demonstrations when SMS is unavailable. Generate a temporary code here, then enter it in the Verified Visit form. This confirms the demo workflow only; it does not verify ownership of the phone number.</p>
+            <div class="inline">
+                <button id="generateDemoOtp" type="button">Generate Demo OTP</button>
+            </div>
+            <div id="demoOtpResult" aria-live="polite"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         RECENT VERIFIED VISITS
+         ================================================= -->
+
+    <div class="panel">
+
+        <small>
+            RECENT VERIFIED VISITS
+        </small>
+
+        <div id="visitsList"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INVENTORY
+     ========================================================= -->
+<section id="inventorySection" class="section private-section">
+<div class="page-title"><small>RESTAURANT FOOD-SAFETY CONTROL</small><h2>📦 Inventory & Food Safety Control</h2><p>Manage restaurant stock, expiry, storage conditions, low-stock thresholds and food-safety incidents.</p></div>
+<div class="inventory-summary" id="inventorySummary"></div>
+<div class="inventory-tabs panel">
+  <div class="section-head"><div><small>INVENTORY CONTROL</small><h3>Choose an inventory operation</h3></div></div>
+  <div class="subnav-tabs" id="inventoryModeTabs">
+    <button class="secondary active" data-inventory-mode="add">➕ Add Stock</button>
+    <button class="secondary" data-inventory-mode="live">📦 Live Stock Control</button>
+  </div>
+</div>
+<div id="inventoryAddPanel" class="inventory-mode-panel">
+<div class="panel restaurant-picker"><div><small>RESTAURANT</small><h3>Choose restaurant to add stock</h3></div><select id="inventoryAddRestaurant" aria-label="Select restaurant for adding stock"></select></div>
+<form id="inventoryForm" class="panel inventory-form">
+<div class="section-head"><div><small>ADD STOCK</small><h3>New Inventory Item</h3></div><span class="food-icon">🍽️</span></div>
+<input type="hidden" name="restaurant_id" id="inventoryRestaurant" value="">
+<div class="form-grid-2"><label>Food / Ingredient<input name="product" required placeholder="e.g. Paneer, Rice, Milk"></label><label>Category<select name="category"><option>Dairy</option><option>Vegetables</option><option>Fruits</option><option>Meat</option><option>Seafood</option><option>Grains</option><option>Oil</option><option>Beverages</option><option>Spices</option><option>Other</option></select></label></div>
+<div class="form-grid-2"><label>Batch Number<input name="batch_number" required placeholder="BATCH-001"></label><label>Supplier<input name="supplier" placeholder="Supplier name"></label></div>
+<div class="form-grid-3"><label>Quantity<input name="quantity" type="number" min="1" required></label><label>Unit<select name="unit"><option>kg</option><option>g</option><option>L</option><option>ml</option><option>pack</option><option>piece</option><option>box</option></select></label><label>Reorder Level<input name="reorder_level" type="number" min="0" value="5"></label></div>
+<div class="form-grid-2"><label>Purchase Date<input name="purchase_date" type="date" required></label><label>Expiry Date<input name="expiry_date" type="date" required></label></div>
+<div class="form-grid-2"><label>Storage Condition<select name="storage_condition"><option>Ambient</option><option>Refrigerated</option><option>Frozen</option><option>Dry Storage</option></select></label><label>Safety Incident<select name="incident_type"><option value="NONE">No incident</option><option value="DAMAGED">Damaged packaging</option><option value="CONTAMINATED">Possible contamination</option><option value="TEMPERATURE">Temperature issue</option><option value="EXPIRED">Expired food</option></select></label></div>
+<label>Notes<textarea name="notes" rows="3" placeholder="Optional storage or safety notes"></textarea></label>
+<button class="primary" type="submit">➕ Add Inventory Item</button><div id="inventoryResult"></div>
+</form>
+</div>
+<div id="inventoryLivePanel" class="inventory-mode-panel hidden">
+<div class="panel restaurant-picker"><div><small>RESTAURANT</small><h3>Choose restaurant for live stock</h3></div><select id="inventoryLiveRestaurant" aria-label="Select restaurant for live stock"></select></div>
+<div class="panel inventory-panel"><div class="section-head"><div><small>LIVE STOCK CONTROL</small><h3 id="liveStockTitle">Current Inventory</h3></div><b class="heap">MIN HEAP</b></div><div id="heapCallout"></div><div id="inventoryFilters" class="inventory-filters"><button class="secondary active-filter" data-filter="ALL">All</button><button class="secondary" data-filter="SAFE">Safe</button><button class="secondary" data-filter="EXPIRING SOON">Expiring</button><button class="secondary" data-filter="EXPIRED">Expired</button><button class="secondary" data-filter="LOW STOCK">Low Stock</button></div><div id="inventoryList"></div></div>
+</div>
+</section>
+
+<!-- =========================================================
+     RESTAURANT MANAGEMENT (BUSINESS ROLE)
+     ========================================================= -->
+<section id="restaurantManagementSection" class="section">
+  <div class="page-title"><small>RESTAURANT STAFF WORKSPACE</small><h2>🏪 Restaurant Management</h2><p>Restaurant workers can maintain their own stock, review expiry alerts, and support safe food handling. This workspace is separate from the FoodSafe officer dashboard.</p></div>
+  <div id="managerLogin" class="panel manager-login-panel">
+    <div class="section-head"><div><small>RESTAURANT ACCESS</small><h3>Restaurant Management Login</h3></div><span class="food-icon">🔐</span></div>
+    <form id="managerLoginForm" class="form-grid">
+      <label>Restaurant<select id="managerRestaurantSelect" required></select></label>
+      <label>Username<input id="managerLoginUser" required autocomplete="username" placeholder="Restaurant manager username"></label>
+      <label>Password<input id="managerLoginPass" type="password" required autocomplete="current-password" placeholder="Password"></label>
+      <button class="primary" type="submit">Login to Restaurant Workspace</button>
+    </form>
+    <div id="managerLoginResult" class="small" aria-live="polite"></div>
+  </div>
+  <div id="managerWorkspace" class="hidden">
+    <div class="admin-toolbar panel"><div><small>RESTAURANT STAFF SESSION</small><h3>Managing <span id="managerRestaurantName">your restaurant</span></h3><p class="small">Changes are limited to the restaurant selected at login.</p></div><button type="button" id="managerLogout" class="secondary">↪ Logout</button></div>
+    <div id="managerInventorySummary" class="inventory-summary"></div>
+    <div class="panel"><div class="section-head"><div><small>STOCK CONTROL</small><h3>Current Inventory & Expiry</h3></div><button type="button" class="secondary" id="managerRefreshInventory">↻ Refresh</button></div><div id="managerInventoryList"></div></div>
+    <form id="managerInventoryForm" class="panel inventory-form">
+      <div class="section-head"><div><small>RESTAURANT OPERATIONS</small><h3>Add Stock Item</h3></div><span class="food-icon">📦</span></div>
+      <div class="form-grid-2"><label>Food / Ingredient<input name="product" required placeholder="e.g. Milk, Rice, Paneer"></label><label>Category<select name="category"><option>Dairy</option><option>Vegetables</option><option>Fruits</option><option>Meat</option><option>Seafood</option><option>Grains</option><option>Oil</option><option>Beverages</option><option>Spices</option><option>Other</option></select></label></div>
+      <div class="form-grid-2"><label>Batch Number<input name="batch_number" required></label><label>Supplier<input name="supplier"></label></div>
+      <div class="form-grid-3"><label>Quantity<input name="quantity" type="number" min="1" required></label><label>Unit<select name="unit"><option>kg</option><option>g</option><option>L</option><option>ml</option><option>pack</option><option>piece</option><option>box</option></select></label><label>Reorder Level<input name="reorder_level" type="number" min="0" value="5"></label></div>
+      <div class="form-grid-2"><label>Purchase Date<input name="purchase_date" type="date" required></label><label>Expiry Date<input name="expiry_date" type="date" required></label></div>
+      <div class="form-grid-2"><label>Storage Condition<select name="storage_condition"><option>Ambient</option><option>Refrigerated</option><option>Frozen</option><option>Dry Storage</option></select></label><label>Safety Incident<select name="incident_type"><option value="NONE">No incident</option><option value="DAMAGED">Damaged packaging</option><option value="CONTAMINATED">Possible contamination</option><option value="TEMPERATURE">Temperature issue</option><option value="EXPIRED">Expired food</option></select></label></div>
+      <label>Notes<textarea name="notes" rows="2"></textarea></label><button class="primary" type="submit">➕ Add to My Restaurant Inventory</button><div id="managerInventoryResult" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- =========================================================
+     ADMIN DETAILS / ANALYTICS
+     ========================================================= -->
+<section id="detailsSection" class="section private-section">
+  <div class="page-title"><small>ADMIN-ONLY ANALYTICS</small><h2>📈 Details</h2><p>Choose the analysis you want to view. The selected analysis opens separately and can be closed with the Back button.</p></div>
+
+  <div id="detailsChoicePanel" class="details-choice-panel">
+    <button type="button" class="details-choice-card" data-detail-mode="overall">
+      <span class="details-choice-icon">🛡️</span>
+      <span><b>Overall Risk Analysis</b><small>View the FoodSafe risk score of all restaurants together.</small></span>
+      <span class="details-choice-arrow">→</span>
+    </button>
+    <button type="button" class="details-choice-card" data-detail-mode="risk">
+      <span class="details-choice-icon">🔎</span>
+      <span><b>Risk Score Breakdown</b><small>Select a restaurant and see how its risk score is calculated from individual factors.</small></span>
+      <span class="details-choice-arrow">→</span>
+    </button>
+    <button type="button" class="details-choice-card" data-detail-mode="inventory">
+      <span class="details-choice-icon">📦</span>
+      <span><b>Inventory Analysis</b><small>Select a restaurant and view its inventory health as a line graph.</small></span>
+      <span class="details-choice-arrow">→</span>
+    </button>
+  </div>
+
+  <div id="detailsOverallPanel" class="details-view-panel hidden">
+    <button type="button" class="secondary details-back-btn" data-details-back="true">← Back to Details</button>
+    <div class="panel details-section-panel">
+      <div class="section-head"><div><small>OVERALL RISK ANALYSIS</small><h3>FoodSafe Risk Score — All Restaurants</h3><p class="small">All restaurants are plotted together for direct comparison.</p></div><span class="food-icon">🛡️</span></div>
+      <div id="overallRiskGraph" class="details-chart-host"></div>
+    </div>
+  </div>
+
+  <div id="detailsRiskPanel" class="details-view-panel hidden">
+    <button type="button" class="secondary details-back-btn" data-details-back="true">← Back to Details</button>
+    <div class="panel details-section-panel">
+      <div class="section-head"><div><small>RISK SCORE BREAKDOWN</small><h3>How the Risk Score Is Calculated</h3><p class="small">Select a restaurant to see the individual factor scores used in the FoodSafe risk model.</p></div><span class="food-icon">🔎</span></div>
+      <div class="details-picker"><label>Restaurant<select id="riskFactorRestaurant"></select></label></div>
+      <div id="riskFactorFormula" class="formula details-formula"></div>
+      <div id="riskFactorGraph" class="details-chart-host"></div>
+    </div>
+  </div>
+
+  <div id="detailsInventoryPanel" class="details-view-panel hidden">
+    <button type="button" class="secondary details-back-btn" data-details-back="true">← Back to Details</button>
+    <div class="panel details-section-panel">
+      <div class="section-head"><div><small>INVENTORY ANALYSIS</small><h3>Inventory Health — Selected Restaurant</h3><p class="small">Select a restaurant to view the health of its individual stock items as a line graph.</p></div><span class="food-icon">📦</span></div>
+      <div class="details-picker"><label>Restaurant<select id="inventoryGraphRestaurant"></select></label></div>
+      <div id="inventoryGraphMeta" class="details-meta"></div>
+      <div id="inventoryGraph" class="details-chart-host"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+     ========================================================= -->
+
+<section id="adminSection" class="section">
+    <div class="page-title"><small>ADMINISTRATION</small><h2>🛡️ Admin Dashboard</h2><p>Protected control center for restaurant risk, complaints and inventory safety.</p></div>
+    <div id="adminLogin" class="panel admin-login-panel">
+        <div class="section-head"><div><small>SECURE ACCESS</small><h3>Admin Login</h3></div><span class="food-icon">🔐</span></div>
+        <form id="loginForm" class="form-grid">
+            <input id="loginUser" placeholder="Username" required>
+            <input id="loginPass" type="password" placeholder="Password" required>
+            <button class="primary" type="submit">Login</button>
+        </form>
+        <div id="loginResult" class="small"></div>
+        <div class="small">Enter your administrator credentials to access the protected dashboard.</div>
+    </div>
+    <div id="adminWorkspace" class="hidden">
+      <div class="admin-toolbar panel">
+        <div><small>ADMIN SESSION</small><h3>Welcome, <span id="adminWelcome">Admin</span></h3></div>
+        <button id="adminLogout" class="secondary" type="button">↪ Logout</button>
+      </div>
+      <div class="subnav-tabs admin-tabs" id="adminModeTabs">
+        <button class="secondary active" data-admin-mode="overview">📊 Overview</button>
+        <button class="secondary" data-admin-mode="risk">🛡️ Restaurant Risk Control</button>
+         <button class="secondary" data-admin-mode="priority">🚨 Priority Queue</button>
+        <button class="secondary" data-admin-mode="reports">🧾 Issued Reports</button>
+        <button class="secondary" data-admin-mode="expiry">⏳ Expiry Alerts</button>
+      </div>
+      <div id="adminOverviewPanel" class="admin-mode-panel">
+        <div id="adminStats" class="stats"></div>
+        <div class="panel admin-overview-panel">
+          <div class="section-head"><div><small>FOOD-SAFETY OPERATIONS</small><h3>Inventory & Safety Overview</h3><p class="small">Operational snapshot across restaurant inventory, stock health and safety incidents.</p></div></div>
+          <div id="adminOverview" class="admin-overview"></div>
+          <div id="adminOverviewDetails" class="admin-overview-details"></div>
+        </div>
+      </div>
+      <div id="adminRiskPanel" class="admin-mode-panel hidden">
+        <div class="panel admin-risk-panel"><div class="section-head"><div><small>RESTAURANT RISK CONTROL</small><h3>Restaurant Risk Overview</h3></div></div>
+          <div class="risk-filter-tabs" id="riskFilters"><button class="secondary active" data-risk-filter="ALL">See All</button><button class="secondary" data-risk-filter="SAFE">See Safe</button><button class="secondary" data-risk-filter="MEDIUM">See Medium</button><button class="secondary" data-risk-filter="DANGER">See Danger</button></div>
+          <div id="adminRiskTable"></div>
+        </div>
+      </div>
+       <div id="adminPriorityPanel" class="admin-mode-panel hidden">
+        <div class="priority-dashboard">
+          <div id="prioritySummary" class="priority-summary"></div>
+          <div class="panel"><div class="section-head"><div><small>DECISION QUEUE</small><h3>Priority Queue</h3><p class="small">Cases ranked by severity, evidence, verification and safety impact.</p></div></div><div id="priorityComplaints"></div></div>
+        </div>
+      </div>
+      <div id="adminReportsPanel" class="admin-mode-panel hidden">
+        <div class="panel admin-reports-panel">
+          <div class="section-head"><div><small>CONSUMER-SUBMITTED EVIDENCE</small><h3>Issued Reports</h3><p class="small">Review the reported problem, uploaded evidence photo, bill/receipt, and previous review decisions.</p></div><button type="button" class="secondary" id="refreshReportsButton">↻ Refresh Reports</button></div>
+          <div class="report-controls">
+            <label>Find report<input id="reportSearchFilter" placeholder="Report ID, restaurant or problem"></label>
+            <label>Status<select id="reportStatusFilter"><option value="ALL">All reports</option><option value="PENDING">Pending evaluation</option><option value="VERIFIED">Verified</option><option value="REJECTED">Rejected</option></select></label>
+          </div>
+          <div id="adminIssuedReports"><div class="notice">Reports will appear here after loading.</div></div>
+        </div>
+      </div>
+      <div id="adminExpiryPanel" class="admin-mode-panel hidden">
+        <div class="expiry-dashboard">
+          <div id="expirySummary" class="expiry-summary"></div>
+          <div class="risk-filter-tabs expiry-filter-tabs" id="expiryFilters"><button class="secondary active" data-expiry-filter="NEAR">⏳ Near Expiry</button><button class="secondary" data-expiry-filter="EXPIRED">🔴 Expired</button><button class="secondary" data-expiry-filter="LOW">🟡 Low Stock</button></div>
+          <div class="panel"><div class="section-head"><div><small>INVENTORY SAFETY</small><h3 id="expiryPanelTitle">Near-Expiry Alerts</h3><p class="small">Actionable stock alerts generated from the live inventory database.</p></div></div><div id="adminAlerts"></div></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <div class="wrap">
+
+        FoodSafe • Hackathon Prototype •
+        Demo/curated data •
+        No live government API required
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

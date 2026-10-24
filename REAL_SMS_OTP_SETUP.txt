@@ -1,0 +1,14 @@
+FOODSAFE REAL SMS OTP SETUP
+===========================
+
+1. Create/sign in to a Twilio account and configure an SMS-capable sender number. Trial accounts may only message verified recipient numbers. SMS charges and destination-country requirements may apply.
+2. Copy Food_Safe/.env.example to Food_Safe/.env.
+3. Fill in TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_FROM_NUMBER with your own Twilio values. Do not share the .env file or commit it to source control.
+4. Install project dependencies in the same Python environment used to run FoodSafe:
+       python -m pip install -r requirements.txt
+5. Restart the Flask server and open Verified Visit. Enter a phone number (10-digit Indian numbers are normalized to +91), then click Send SMS OTP.
+6. Enter the received six-digit code in the Verified Visit form and submit.
+
+Security behavior: OTP is random, stored as a hash in server memory, expires in 5 minutes, has a 5-attempt limit, is one-time-use, and sends to the same phone number verified at submission. A 60-second per-number send cooldown is applied. Restarting the server clears pending OTPs. For a multi-worker/production deployment, use a shared store such as Redis and add durable rate limits.
+
+Troubleshooting: If sending fails, read the error shown in FoodSafe and the Flask terminal. Check Twilio account status, sender configuration, recipient formatting/verification for trial accounts, and account permissions for SMS to the destination country.
